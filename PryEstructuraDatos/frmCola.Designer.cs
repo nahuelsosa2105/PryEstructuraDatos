@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpNuevoElemento = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -47,26 +46,17 @@
             this.lblCodEliminado = new System.Windows.Forms.Label();
             this.gpListado = new System.Windows.Forms.GroupBox();
             this.dgvListado = new System.Windows.Forms.DataGridView();
+            this.lstCola = new System.Windows.Forms.ListBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstCola = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpNuevoElemento.SuspendLayout();
             this.gpElementoEliminado.SuspendLayout();
             this.gpListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PryEstructuraDatos.Properties.Resources.cola;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(217, 218);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // gpNuevoElemento
             // 
@@ -243,6 +233,14 @@
             this.dgvListado.Size = new System.Drawing.Size(559, 186);
             this.dgvListado.TabIndex = 1;
             // 
+            // lstCola
+            // 
+            this.lstCola.FormattingEnabled = true;
+            this.lstCola.Location = new System.Drawing.Point(6, 19);
+            this.lstCola.Name = "lstCola";
+            this.lstCola.Size = new System.Drawing.Size(156, 186);
+            this.lstCola.TabIndex = 0;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Código";
@@ -254,20 +252,24 @@
             this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 200;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Trámite";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
             // 
-            // lstCola
+            // pictureBox1
             // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(156, 186);
-            this.lstCola.TabIndex = 0;
+            this.pictureBox1.Image = global::PryEstructuraDatos.Properties.Resources.cola;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(217, 218);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmCola
             // 
@@ -280,13 +282,14 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmCola";
             this.Text = "Estructura Dinámica no Lineal - Cola";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCola_FormClosed);
             this.gpNuevoElemento.ResumeLayout(false);
             this.gpNuevoElemento.PerformLayout();
             this.gpElementoEliminado.ResumeLayout(false);
             this.gpElementoEliminado.PerformLayout();
             this.gpListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,9 +316,9 @@
         private System.Windows.Forms.Label lblCodEliminado;
         private System.Windows.Forms.GroupBox gpListado;
         private System.Windows.Forms.DataGridView dgvListado;
+        private System.Windows.Forms.ListBox lstCola;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.ListBox lstCola;
     }
 }

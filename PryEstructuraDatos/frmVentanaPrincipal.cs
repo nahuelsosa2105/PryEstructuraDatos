@@ -23,5 +23,26 @@ namespace PryEstructuraDatos
             frmDatosDesarrollador frmDatosDesarrollador = new frmDatosDesarrollador();
             frmDatosDesarrollador.ShowDialog();
         }
+
+        private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmPila pasarPila = new frmPila();
+            pasarPila.ShowDialog();
+        }
+
+        private void listaSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmListaSimple pasarListaSimple = new frmListaSimple();
+            pasarListaSimple.ShowDialog();
+        }
+
+        private void colaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCola pasarCola = new frmCola();
+            pasarCola.ShowDialog();
+        }
     }
 }

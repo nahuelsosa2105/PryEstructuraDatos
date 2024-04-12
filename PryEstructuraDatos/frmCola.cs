@@ -37,9 +37,9 @@ namespace PryEstructuraDatos
         {
             if(FilaDePersonas.Primero != null)
             {
-                lblCodEliminado.Text = FilaDePersonas.Primero.Codigo.ToString();
-                lblNombreEliminado.Text = FilaDePersonas.Primero.Nombre;
-                lblTramiteEliminado.Text = FilaDePersonas.Primero.Tramite;
+                lblMostrarCod.Text = FilaDePersonas.Primero.Codigo.ToString();
+                lblMostrarNombre.Text = FilaDePersonas.Primero.Nombre;
+                lblMostrarTramite.Text = FilaDePersonas.Primero.Tramite;
                 FilaDePersonas.Eliminar();
                 FilaDePersonas.Recorrer(dgvListado);
                 FilaDePersonas.Recorrer(lstCola);
@@ -47,10 +47,16 @@ namespace PryEstructuraDatos
             }
             else
             {
-                lblCodEliminado.Text = "";
-                lblNombreEliminado.Text = "";
-                lblTramiteEliminado.Text = "";
+                lblMostrarCod.Text = "";
+                lblMostrarNombre.Text = "";
+                lblMostrarTramite.Text = "";
             }
+        }
+
+        private void frmCola_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
+            volverInicio.ShowDialog();
         }
     }
 
