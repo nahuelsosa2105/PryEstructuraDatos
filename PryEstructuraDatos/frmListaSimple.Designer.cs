@@ -120,7 +120,6 @@
             // 
             // cmbCodigo
             // 
-            this.cmbCodigo.Enabled = false;
             this.cmbCodigo.FormattingEnabled = true;
             this.cmbCodigo.Location = new System.Drawing.Point(73, 123);
             this.cmbCodigo.Name = "cmbCodigo";

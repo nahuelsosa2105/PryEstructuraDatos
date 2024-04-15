@@ -27,8 +27,8 @@ namespace PryEstructuraDatos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //if (txtCodigo.Text != null || txtNombre.Text != null || txtTramite.Text !=null)
-            //{
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            {
                 clsNodo ObjNodo = new clsNodo();
                 ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
                 ObjNodo.Nombre = txtNombre.Text;
@@ -41,16 +41,15 @@ namespace PryEstructuraDatos
                 txtCodigo.Text = "";
                 txtNombre.Text = "";
                 txtTramite.Text = "";
-                
-            //}
-            //else
-            //{
-                btnAgregar.Enabled = false;
+
+            }
+            else
+            {
+                //btnAgregar.Enabled = false;
                 MessageBox.Show("Algun campo vacio");
 
-                
-            //}
-           
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -77,7 +76,7 @@ namespace PryEstructuraDatos
         {
             if(txtCodigo.Text == "")
             {
-                btnAgregar.Enabled = false;
+               // btnAgregar.Enabled = false;
             }
         }
 
@@ -85,7 +84,7 @@ namespace PryEstructuraDatos
         {
             if(txtNombre.Text == "")
             {
-                btnAgregar.Enabled = false;
+                //btnAgregar.Enabled = false;
             }
         }
 
@@ -93,7 +92,7 @@ namespace PryEstructuraDatos
         {
             if (txtTramite.Text == "")
             {
-                btnAgregar.Enabled = false;
+               // btnAgregar.Enabled = false;
             }
         }
     }
