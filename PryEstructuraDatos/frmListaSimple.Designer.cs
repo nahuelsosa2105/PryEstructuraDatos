@@ -33,7 +33,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lstCola = new System.Windows.Forms.ListBox();
+            this.lstLista = new System.Windows.Forms.ListBox();
             this.gpElementoEliminado = new System.Windows.Forms.GroupBox();
             this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             // gpListado
             // 
             this.gpListado.Controls.Add(this.dgvListado);
-            this.gpListado.Controls.Add(this.lstCola);
+            this.gpListado.Controls.Add(this.lstLista);
             this.gpListado.Location = new System.Drawing.Point(25, 249);
             this.gpListado.Name = "gpListado";
             this.gpListado.Size = new System.Drawing.Size(748, 221);
@@ -98,13 +98,13 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
-            // lstCola
+            // lstLista
             // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(156, 186);
-            this.lstCola.TabIndex = 0;
+            this.lstLista.FormattingEnabled = true;
+            this.lstLista.Location = new System.Drawing.Point(6, 19);
+            this.lstLista.Name = "lstLista";
+            this.lstLista.Size = new System.Drawing.Size(156, 186);
+            this.lstLista.TabIndex = 0;
             // 
             // gpElementoEliminado
             // 
@@ -120,6 +120,7 @@
             // 
             // cmbCodigo
             // 
+            this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigo.FormattingEnabled = true;
             this.cmbCodigo.Location = new System.Drawing.Point(73, 123);
             this.cmbCodigo.Name = "cmbCodigo";
@@ -260,7 +261,7 @@
 
         private System.Windows.Forms.GroupBox gpListado;
         private System.Windows.Forms.DataGridView dgvListado;
-        private System.Windows.Forms.ListBox lstCola;
+        private System.Windows.Forms.ListBox lstLista;
         private System.Windows.Forms.GroupBox gpElementoEliminado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnEliminar;

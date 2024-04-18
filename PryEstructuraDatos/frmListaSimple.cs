@@ -18,6 +18,9 @@ namespace PryEstructuraDatos
         }
 
         clsListaSimple Lista = new clsListaSimple();
+        bool cajaCod = false;
+        bool cajaNombre = false;
+        bool cajaTramite = false;
 
         private void frmListaSimple_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -27,7 +30,7 @@ namespace PryEstructuraDatos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            if (cajaCod == true && cajaNombre == true && cajaTramite == true)
             {
                 clsNodo ObjNodo = new clsNodo();
                 ObjNodo.Codigo = Convert.ToInt32(txtCodigo.Text);
@@ -35,7 +38,7 @@ namespace PryEstructuraDatos
                 ObjNodo.Tramite = txtTramite.Text;
                 Lista.Agregar(ObjNodo);
                 Lista.Recorrer(dgvListado);
-                Lista.Recorrer(lstCola);
+                Lista.Recorrer(lstLista);
                 Lista.Recorrer(cmbCodigo);
                 Lista.Recorrer();
                 txtCodigo.Text = "";
@@ -54,37 +57,43 @@ namespace PryEstructuraDatos
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //if (Lista.Primero != null)
-            //{
-            //    lblMostrarCod.Text = Pila.Primero.Codigo.ToString();
-            //    lblMostrarNombre.Text = Pila.Primero.Nombre;
-            //    lblMostrarTramite.Text = Pila.Primero.Tramite;
-            //    Lista.Eliminar();
-            //    Lista.Recorrer(dgvListado);
-            //    Lista.Recorrer(lstCola);
-            //    Lista.Recorrer();
-            //}
-            //else
-            //{
-            //    lblMostrarCod.Text = "";
-            //    lblMostrarNombre.Text = "";
-            //    lblMostrarTramite.Text = "";
-            //}
+            if(Lista.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                Lista.Eliminar(x);
+                Lista.Recorrer(dgvListado);
+                Lista.Recorrer(lstLista);
+                Lista.Recorrer(cmbCodigo);
+                Lista.Recorrer();
+            }
+            else
+            {
+                MessageBox.Show("La Lista está vacía");
+            }
+            //btnEliminar.Enabled = false;
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            if(txtCodigo.Text == "")
+            if (txtCodigo.Text == "")
             {
-               // btnAgregar.Enabled = false;
+                cajaCod = false;
+            }
+            else
+            {
+                cajaCod = true;
             }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if(txtNombre.Text == "")
+            if (txtNombre.Text == "")
             {
-                //btnAgregar.Enabled = false;
+                cajaNombre = false;
+            }
+            else
+            {
+                cajaNombre = true;
             }
         }
 
@@ -92,7 +101,11 @@ namespace PryEstructuraDatos
         {
             if (txtTramite.Text == "")
             {
-               // btnAgregar.Enabled = false;
+                cajaTramite = false;
+            }
+            else
+            {
+                cajaTramite = true;
             }
         }
     }
