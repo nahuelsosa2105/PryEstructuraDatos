@@ -63,6 +63,16 @@ namespace PryEstructuraDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap black_with_gold_accent_background_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("black-with-gold-accent-background-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cola {
             get {
                 object obj = ResourceManager.GetObject("cola", resourceCulture);
@@ -76,6 +86,26 @@ namespace PryEstructuraDatos.Properties {
         internal static System.Drawing.Bitmap Estructura_Pila {
             get {
                 object obj = ResourceManager.GetObject("Estructura Pila", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fondo_estructura_de_datos {
+            get {
+                object obj = ResourceManager.GetObject("Fondo estructura de datos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Foto_de_perfil_Profesional {
+            get {
+                object obj = ResourceManager.GetObject("Foto de perfil Profesional", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

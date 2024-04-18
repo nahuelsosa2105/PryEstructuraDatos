@@ -141,5 +141,14 @@
   <ItemGroup>
     <None Include="Resources\Lista Doblemente Enlazada.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Foto de perfil Profesional.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo estructura de datos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black-with-gold-accent-background-free-vector.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
