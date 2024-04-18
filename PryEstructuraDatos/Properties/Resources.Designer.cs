@@ -83,6 +83,16 @@ namespace PryEstructuraDatos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Lista_Doblemente_Enlazada {
+            get {
+                object obj = ResourceManager.GetObject("Lista Doblemente Enlazada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lista_Simple {
             get {
                 object obj = ResourceManager.GetObject("Lista Simple", resourceCulture);
