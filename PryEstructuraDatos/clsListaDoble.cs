@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PryEstructuraDatos
 {
-    internal class clsListaSimple
+    internal class clsListaDoble
     {
         private clsNodo pri;
+        private clsNodo ult;
 
         public clsNodo Primero
         {
@@ -18,33 +19,50 @@ namespace PryEstructuraDatos
             set { pri = value; }
         }
 
-        public void Agregar(clsNodo Nuevo)
+        public clsNodo Ultimo
         {
-            if (Primero == null)
+            get { return ult; }
+            set { ult = value; }
+        }
+
+        public void Agregar(clsNodo Nvo)
+        {
+            if(Primero == null)
             {
-                Primero = Nuevo;
+                Primero = Nvo;
+                Ultimo = Nvo;
             }
             else
             {
-                if(Nuevo.Codigo <= Primero.Codigo)
+                if(Nvo.Codigo < Primero.Codigo)
                 {
-                    Nuevo.Siguiente = Primero;
-                    Primero = Nuevo;
+                    Nvo.Siguiente = Primero;
+                    Primero.Anterior = Nvo;
+                    Primero = Nvo;
                 }
                 else
                 {
-                    clsNodo aux = Primero;
-                    clsNodo ant = Primero;
-                    while(aux != null && Nuevo.Codigo > aux.Codigo)
+                    if(Nvo.Codigo > Ultimo.Codigo)
                     {
-                        ant = aux;
-                        aux = aux.Siguiente;
+                        Ultimo.Siguiente = Nvo;
+                        Nvo.Anterior = Ultimo;
+                        Ultimo = Nvo;
                     }
-
-                    ant.Siguiente = Nuevo;
-                    Nuevo.Siguiente = aux;
+                    else
+                    {
+                        clsNodo Sig = Primero;
+                        clsNodo Ant = Primero;
+                        while(Sig.Codigo < Nvo.Codigo)
+                        {
+                            Ant = Sig;
+                            Sig = Sig.Siguiente;
+                        }
+                        Ant.Siguiente = Nvo;
+                        Nvo.Siguiente = Sig;
+                        Sig.Anterior = Nvo;
+                        Nvo.Anterior = Ant;
+                    }
                 }
-                
             }
         }
 
@@ -59,7 +77,7 @@ namespace PryEstructuraDatos
                 clsNodo Ant = Primero;
                 clsNodo Aux = Primero;
 
-                while(Aux.Codigo != Codigo)
+                while (Aux.Codigo != Codigo)
                 {
                     Ant = Aux;
                     Aux = Aux.Siguiente;
@@ -84,7 +102,7 @@ namespace PryEstructuraDatos
         {
             clsNodo aux = Primero;
             Combo.Items.Clear();
-            while(aux != null)
+            while (aux != null)
             {
                 Combo.Items.Add(aux.Codigo);
                 aux = aux.Siguiente;
@@ -101,8 +119,6 @@ namespace PryEstructuraDatos
                 aux = aux.Siguiente;
             }
         }
-
-        
 
         public void Recorrer()
         {
@@ -122,5 +138,37 @@ namespace PryEstructuraDatos
             AD.Close();
         }
 
+        public void RecorrerDesc(DataGridView Grilla)
+        {
+            clsNodo aux = Ultimo;
+            Grilla.Rows.Clear();
+            while(aux != null)
+            {
+                Grilla.Rows.Add(aux.Codigo, aux.Nombre, aux.Tramite);
+                aux = aux.Anterior;
+            }
+        }
+
+        public void RecorrerDesc(ComboBox Combo)
+        {
+            clsNodo aux = Ultimo;
+            Combo.Items.Clear();
+            while (aux != null)
+            {
+                Combo.Items.Add(aux.Codigo);
+                aux = aux.Anterior;
+            }
+        }
+
+        public void RecorrerDesc(ListBox Lista)
+        {
+            clsNodo aux = Ultimo;
+            Lista.Items.Clear();
+            while (aux != null)
+            {
+                Lista.Items.Add(aux.Codigo);
+                aux = aux.Anterior;
+            }
+        }
     }
 }

@@ -47,8 +47,8 @@
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbAscendente = new System.Windows.Forms.RadioButton();
             this.rdbDescendente = new System.Windows.Forms.RadioButton();
+            this.rdbAscendente = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
@@ -126,7 +126,7 @@
             // 
             this.cmbCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(76, 27);
+            this.cmbCodigo.Location = new System.Drawing.Point(73, 27);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(156, 21);
             this.cmbCodigo.TabIndex = 14;
@@ -148,6 +148,7 @@
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gpNuevoElemento
             // 
@@ -200,6 +201,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtNombre
             // 
@@ -207,6 +209,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(173, 20);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtTramite
             // 
@@ -214,6 +217,7 @@
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(173, 20);
             this.txtTramite.TabIndex = 4;
+            this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtCodigo
             // 
@@ -221,6 +225,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // groupBox1
             // 
@@ -233,6 +238,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Listar Datos";
             // 
+            // rdbDescendente
+            // 
+            this.rdbDescendente.AutoSize = true;
+            this.rdbDescendente.Location = new System.Drawing.Point(6, 51);
+            this.rdbDescendente.Name = "rdbDescendente";
+            this.rdbDescendente.Size = new System.Drawing.Size(89, 17);
+            this.rdbDescendente.TabIndex = 1;
+            this.rdbDescendente.TabStop = true;
+            this.rdbDescendente.Text = "Descendente";
+            this.rdbDescendente.UseVisualStyleBackColor = true;
+            this.rdbDescendente.CheckedChanged += new System.EventHandler(this.rdbDescendente_CheckedChanged);
+            // 
             // rdbAscendente
             // 
             this.rdbAscendente.AutoSize = true;
@@ -244,17 +261,7 @@
             this.rdbAscendente.TabStop = true;
             this.rdbAscendente.Text = "Ascendente";
             this.rdbAscendente.UseVisualStyleBackColor = false;
-            // 
-            // rdbDescendente
-            // 
-            this.rdbDescendente.AutoSize = true;
-            this.rdbDescendente.Location = new System.Drawing.Point(6, 51);
-            this.rdbDescendente.Name = "rdbDescendente";
-            this.rdbDescendente.Size = new System.Drawing.Size(89, 17);
-            this.rdbDescendente.TabIndex = 1;
-            this.rdbDescendente.TabStop = true;
-            this.rdbDescendente.Text = "Descendente";
-            this.rdbDescendente.UseVisualStyleBackColor = true;
+            this.rdbAscendente.CheckedChanged += new System.EventHandler(this.rdbAscendente_CheckedChanged);
             // 
             // pictureBox1
             // 
