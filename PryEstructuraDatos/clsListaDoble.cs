@@ -74,16 +74,28 @@ namespace PryEstructuraDatos
             }
             else
             {
-                clsNodo Ant = Primero;
-                clsNodo Aux = Primero;
-
-                while (Aux.Codigo != Codigo)
+                if (Ultimo.Codigo == Codigo)
                 {
-                    Ant = Aux;
+                    Ultimo = Primero.Siguiente;
+                    Primero.Anterior = null;
+                }
+                else
+                {
+
+                    clsNodo Ant = Primero;
+                    clsNodo Aux = Primero;
+
+                    while (Aux.Codigo != Codigo)
+                    {
+                        Ant = Aux;
+                        Aux = Aux.Siguiente;
+                    }
+
+                    Ant.Siguiente = Aux.Siguiente;
                     Aux = Aux.Siguiente;
+                    Aux.Anterior = Ant;
                 }
 
-                Ant.Siguiente = Aux.Siguiente;
             }
         }
 
