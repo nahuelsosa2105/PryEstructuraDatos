@@ -13,6 +13,8 @@ namespace PryEstructuraDatos
         private String tra;
         private clsNodo sig;
         private clsNodo ant;
+        private clsNodo izq;
+        private clsNodo der;
 
         public Int32 Codigo
         {
@@ -39,6 +41,18 @@ namespace PryEstructuraDatos
         }
 
         public clsNodo Anterior
+        {
+            get { return ant; }
+            set { ant = value; }
+        }
+
+        public clsNodo Derecho
+        {
+            get { return sig; }
+            set { sig = value; }
+        }
+
+        public clsNodo Izquierdo
         {
             get { return ant; }
             set { ant = value; }
