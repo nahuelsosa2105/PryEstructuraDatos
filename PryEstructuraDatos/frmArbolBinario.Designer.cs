@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gpListado = new System.Windows.Forms.GroupBox();
+            this.optPostOrden = new System.Windows.Forms.RadioButton();
+            this.optPreOrden = new System.Windows.Forms.RadioButton();
+            this.optInOrdenDesc = new System.Windows.Forms.RadioButton();
+            this.optInOrdenAsc = new System.Windows.Forms.RadioButton();
             this.dgvListado = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,11 +49,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTramite = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.optInOrdenAsc = new System.Windows.Forms.RadioButton();
-            this.optInOrdenDesc = new System.Windows.Forms.RadioButton();
-            this.optPreOrden = new System.Windows.Forms.RadioButton();
-            this.optPostOrden = new System.Windows.Forms.RadioButton();
+            this.btnEquilibrar = new System.Windows.Forms.Button();
             this.trvMostrar = new System.Windows.Forms.TreeView();
             this.gpListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
@@ -70,6 +70,50 @@
             this.gpListado.TabIndex = 20;
             this.gpListado.TabStop = false;
             this.gpListado.Text = "Listado en una Lista y una Grilla";
+            // 
+            // optPostOrden
+            // 
+            this.optPostOrden.AutoSize = true;
+            this.optPostOrden.Location = new System.Drawing.Point(36, 173);
+            this.optPostOrden.Name = "optPostOrden";
+            this.optPostOrden.Size = new System.Drawing.Size(78, 17);
+            this.optPostOrden.TabIndex = 5;
+            this.optPostOrden.TabStop = true;
+            this.optPostOrden.Text = "Post-Orden";
+            this.optPostOrden.UseVisualStyleBackColor = true;
+            // 
+            // optPreOrden
+            // 
+            this.optPreOrden.AutoSize = true;
+            this.optPreOrden.Location = new System.Drawing.Point(36, 136);
+            this.optPreOrden.Name = "optPreOrden";
+            this.optPreOrden.Size = new System.Drawing.Size(73, 17);
+            this.optPreOrden.TabIndex = 4;
+            this.optPreOrden.TabStop = true;
+            this.optPreOrden.Text = "Pre-Orden";
+            this.optPreOrden.UseVisualStyleBackColor = true;
+            // 
+            // optInOrdenDesc
+            // 
+            this.optInOrdenDesc.AutoSize = true;
+            this.optInOrdenDesc.Location = new System.Drawing.Point(36, 95);
+            this.optInOrdenDesc.Name = "optInOrdenDesc";
+            this.optInOrdenDesc.Size = new System.Drawing.Size(133, 17);
+            this.optInOrdenDesc.TabIndex = 3;
+            this.optInOrdenDesc.TabStop = true;
+            this.optInOrdenDesc.Text = "In-Orden-Descendente";
+            this.optInOrdenDesc.UseVisualStyleBackColor = true;
+            // 
+            // optInOrdenAsc
+            // 
+            this.optInOrdenAsc.AutoSize = true;
+            this.optInOrdenAsc.Location = new System.Drawing.Point(36, 54);
+            this.optInOrdenAsc.Name = "optInOrdenAsc";
+            this.optInOrdenAsc.Size = new System.Drawing.Size(126, 17);
+            this.optInOrdenAsc.TabIndex = 2;
+            this.optInOrdenAsc.TabStop = true;
+            this.optInOrdenAsc.Text = "In-Orden-Ascendente";
+            this.optInOrdenAsc.UseVisualStyleBackColor = true;
             // 
             // dgvListado
             // 
@@ -194,6 +238,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtNombre
             // 
@@ -216,58 +261,14 @@
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 3;
             // 
-            // button1
+            // btnEquilibrar
             // 
-            this.button1.Location = new System.Drawing.Point(641, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 43);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Equilibrar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // optInOrdenAsc
-            // 
-            this.optInOrdenAsc.AutoSize = true;
-            this.optInOrdenAsc.Location = new System.Drawing.Point(36, 54);
-            this.optInOrdenAsc.Name = "optInOrdenAsc";
-            this.optInOrdenAsc.Size = new System.Drawing.Size(126, 17);
-            this.optInOrdenAsc.TabIndex = 2;
-            this.optInOrdenAsc.TabStop = true;
-            this.optInOrdenAsc.Text = "In-Orden-Ascendente";
-            this.optInOrdenAsc.UseVisualStyleBackColor = true;
-            // 
-            // optInOrdenDesc
-            // 
-            this.optInOrdenDesc.AutoSize = true;
-            this.optInOrdenDesc.Location = new System.Drawing.Point(36, 95);
-            this.optInOrdenDesc.Name = "optInOrdenDesc";
-            this.optInOrdenDesc.Size = new System.Drawing.Size(133, 17);
-            this.optInOrdenDesc.TabIndex = 3;
-            this.optInOrdenDesc.TabStop = true;
-            this.optInOrdenDesc.Text = "In-Orden-Descendente";
-            this.optInOrdenDesc.UseVisualStyleBackColor = true;
-            // 
-            // optPreOrden
-            // 
-            this.optPreOrden.AutoSize = true;
-            this.optPreOrden.Location = new System.Drawing.Point(36, 136);
-            this.optPreOrden.Name = "optPreOrden";
-            this.optPreOrden.Size = new System.Drawing.Size(73, 17);
-            this.optPreOrden.TabIndex = 4;
-            this.optPreOrden.TabStop = true;
-            this.optPreOrden.Text = "Pre-Orden";
-            this.optPreOrden.UseVisualStyleBackColor = true;
-            // 
-            // optPostOrden
-            // 
-            this.optPostOrden.AutoSize = true;
-            this.optPostOrden.Location = new System.Drawing.Point(36, 173);
-            this.optPostOrden.Name = "optPostOrden";
-            this.optPostOrden.Size = new System.Drawing.Size(78, 17);
-            this.optPostOrden.TabIndex = 5;
-            this.optPostOrden.TabStop = true;
-            this.optPostOrden.Text = "Post-Orden";
-            this.optPostOrden.UseVisualStyleBackColor = true;
+            this.btnEquilibrar.Location = new System.Drawing.Point(641, 196);
+            this.btnEquilibrar.Name = "btnEquilibrar";
+            this.btnEquilibrar.Size = new System.Drawing.Size(223, 43);
+            this.btnEquilibrar.TabIndex = 21;
+            this.btnEquilibrar.Text = "Equilibrar";
+            this.btnEquilibrar.UseVisualStyleBackColor = true;
             // 
             // trvMostrar
             // 
@@ -282,7 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 526);
             this.Controls.Add(this.trvMostrar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEquilibrar);
             this.Controls.Add(this.gpListado);
             this.Controls.Add(this.gpElementoEliminado);
             this.Controls.Add(this.gpNuevoElemento);
@@ -317,7 +318,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtTramite;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEquilibrar;
         private System.Windows.Forms.RadioButton optPostOrden;
         private System.Windows.Forms.RadioButton optPreOrden;
         private System.Windows.Forms.RadioButton optInOrdenDesc;

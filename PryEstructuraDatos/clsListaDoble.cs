@@ -68,32 +68,41 @@ namespace PryEstructuraDatos
 
         public void Eliminar(Int32 Codigo)
         {
-            if (Primero.Codigo == Codigo)
+            if (Primero.Codigo == Codigo && Ultimo == Primero)
             {
-                Primero = Primero.Siguiente;
+                Primero = null;
+                Ultimo = null;
             }
             else
             {
-                if (Ultimo.Codigo == Codigo)
+                if (Primero.Codigo == Codigo)
                 {
-                    Ultimo = Primero.Siguiente;
+                    Primero = Primero.Siguiente;
                     Primero.Anterior = null;
                 }
                 else
                 {
-
-                    clsNodo Ant = Primero;
-                    clsNodo Aux = Primero;
-
-                    while (Aux.Codigo != Codigo)
+                    if(Ultimo.Codigo == Codigo)
                     {
-                        Ant = Aux;
-                        Aux = Aux.Siguiente;
+                        Ultimo = Ultimo.Anterior;
+                        Ultimo.Siguiente = null;
                     }
+                    else
+                    {
+                        clsNodo Aux = Primero;
+                        clsNodo Ant = Primero;
 
-                    Ant.Siguiente = Aux.Siguiente;
-                    Aux = Aux.Siguiente;
-                    Aux.Anterior = Ant;
+                        while (Aux.Codigo < Codigo)
+                        {
+                            Ant = Aux;
+                            Aux = Aux.Siguiente;
+                        }
+
+                        Ant.Siguiente = Aux.Siguiente;
+                        Aux = Aux.Siguiente;
+                        Aux.Anterior = Ant;
+                    }
+                    
                 }
 
             }
