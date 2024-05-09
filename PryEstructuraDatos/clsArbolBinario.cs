@@ -10,10 +10,8 @@ namespace PryEstructuraDatos
 {
     internal class clsArbolBinario
     {
-        //Creo el campo inicial del árbol. Lo llamamos raíz
         private clsNodo PrimerNodo;
 
-        //Creo la única propiedad que necesito
         public clsNodo Raiz
         {
             get { return PrimerNodo; }
@@ -47,7 +45,6 @@ namespace PryEstructuraDatos
                     }
                 }
 
-                //Fuera del Mientras
                 if (Nuevo.Codigo < NodoPadre.Codigo)
                 {
                     NodoPadre.Izquierdo = Nuevo;
@@ -65,9 +62,13 @@ namespace PryEstructuraDatos
             InOrdenAsc(Grilla, Raiz);
         }
 
-        public void InOrdenAsc(DataGridView Dgv, clsNodo R)//R = Raiz
+        public void InOrdenAsc(DataGridView Dgv, clsNodo R)
         {
-            //Pregunta si hay algo a la izquierda
+            if(R == null)
+            {
+                return;
+            }
+            
             if (R.Izquierdo != null)
             {
                 InOrdenAsc(Dgv, R.Izquierdo);
@@ -75,7 +76,6 @@ namespace PryEstructuraDatos
 
             Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
 
-            //Pregunta si hay algo a la derecha
             if (R.Derecho != null)
             {
                 InOrdenAsc(Dgv, R.Derecho);
@@ -88,9 +88,13 @@ namespace PryEstructuraDatos
             InOrdenDesc(dgv, Raiz);
         }
 
-        public void InOrdenDesc(DataGridView Dgv, clsNodo R)//R = Raíz 
+        public void InOrdenDesc(DataGridView Dgv, clsNodo R) 
         {
-            //Pregunta si hay algo a la derecha
+            if(R == null)
+            {
+                return;
+            }
+
             if (R.Derecho != null)
             {
                 InOrdenDesc(Dgv, R.Derecho);
@@ -98,7 +102,6 @@ namespace PryEstructuraDatos
 
             Dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
 
-            //Pregunta si hay algo a la izquierda
             if (R.Izquierdo != null)
             {
                 InOrdenDesc(Dgv, R.Izquierdo);
@@ -111,18 +114,20 @@ namespace PryEstructuraDatos
             PreOrden(dgv, Raiz);
         }
 
-        public void PreOrden(DataGridView dgv, clsNodo R) //R = Raiz
+        public void PreOrden(DataGridView dgv, clsNodo R) 
         {
-            //Agrega el nodo raíz primero
+            if (R == null)
+            {
+                return;
+            }
+            
             dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
 
-            //Luego recorre el subárbol izquierdo si existe
             if (R.Izquierdo != null)
             {
                 PreOrden(dgv, R.Izquierdo);
             }
 
-            //Finalmente, recorre el subárbol derecho si existe
             if (R.Derecho != null)
             {
                 PreOrden(dgv, R.Derecho);
@@ -137,19 +142,21 @@ namespace PryEstructuraDatos
 
         public void PostOrden(DataGridView dgv, clsNodo R)
         {
-            //Recorre el subárbol izquierdo si existe
+            if(R == null)
+            {
+                return;
+            }
+            
             if (R.Izquierdo != null)
             {
                 PostOrden(dgv, R.Izquierdo);
             }
 
-            //Luego, recorre el subárbol derecho si existe
             if (R.Derecho != null)
             {
                 PostOrden(dgv, R.Derecho);
             }
-
-            //Finalmente, agrega el nodo raíz al final
+            
             dgv.Rows.Add(R.Codigo, R.Nombre, R.Tramite);
         }
 
@@ -159,17 +166,20 @@ namespace PryEstructuraDatos
             InOrdenAsc(Lista, Raiz);
         }
 
-        public void InOrdenAsc(ListBox Lst, clsNodo R)//R = Raiz
+        public void InOrdenAsc(ListBox Lst, clsNodo R)
         {
-            //Pregunta si hay algo a la izquierda
+            if(R == null)
+            {
+                return;
+            }
+            
             if (R.Izquierdo != null)
             {
                 InOrdenAsc(Lst, R.Izquierdo);
             }
 
             Lst.Items.Add(R.Codigo);
-
-            //Pregunta si hay algo a la derecha
+            
             if (R.Derecho != null)
             {
                 InOrdenAsc(Lst, R.Derecho);
@@ -182,17 +192,20 @@ namespace PryEstructuraDatos
             InOrdenDesc(Lst, Raiz);
         }
 
-        public void InOrdenDesc(ListBox Lst, clsNodo R)//R = Raiz
+        public void InOrdenDesc(ListBox Lst, clsNodo R)
         {
-            //Pregunta si hay algo a la derecha
+            if(R == null)
+            {
+                return;
+            }
+
             if (R.Derecho != null)
             {
                 InOrdenDesc(Lst, R.Derecho);
             }
 
             Lst.Items.Add(R.Codigo);
-
-            //Pregunta si hay algo a la izquierda
+            
             if (R.Izquierdo != null)
             {
                 InOrdenDesc(Lst, R.Izquierdo);
@@ -205,18 +218,20 @@ namespace PryEstructuraDatos
             PreOrden(lst, Raiz);
         }
 
-        public void PreOrden(ListBox lst, clsNodo R) //R = Raiz
+        public void PreOrden(ListBox lst, clsNodo R) 
         {
-            //Agrega el nodo raíz primero
+            if (R == null)
+            {
+                return;
+            }
+            
             lst.Items.Add(R.Codigo);
-
-            //Luego recorre el subárbol izquierdo si existe
+            
             if (R.Izquierdo != null)
             {
                 PreOrden(lst, R.Izquierdo);
             }
-
-            //Finalmente, recorre el subárbol derecho si existe
+            
             if (R.Derecho != null)
             {
                 PreOrden(lst, R.Derecho);
@@ -231,19 +246,21 @@ namespace PryEstructuraDatos
 
         public void PostOrden(ListBox lst, clsNodo R)
         {
-            //Recorre el subárbol izquierdo si existe
+            if(R == null)
+            {
+                return;
+            }
+
             if (R.Izquierdo != null)
             {
                 PostOrden(lst, R.Izquierdo);
             }
-
-            //Luego, recorre el subárbol derecho si existe
+            
             if (R.Derecho != null)
             {
                 PostOrden(lst, R.Derecho);
             }
-
-            //Finalmente, agrega el nodo raíz al final
+            
             lst.Items.Add(R.Codigo);
         }
 
@@ -256,20 +273,22 @@ namespace PryEstructuraDatos
             tree.ExpandAll();
         }
 
-        //Que esto se pase a un treeview
-        private void PreOrden(clsNodo R, TreeNode nodoTreeView)//R = Raiz 
+        private void PreOrden(clsNodo R, TreeNode nodoTreeView) 
         {
+            if(R == null)
+            {
+                return;
+            }
+
             TreeNode NodoPadre = new TreeNode(R.Codigo.ToString());
 
             nodoTreeView.Nodes.Add(NodoPadre);
-
-            //Pregunta si hay algo a la izquierda
+            
             if (R.Izquierdo != null)
             {
                 PreOrden(R.Izquierdo, NodoPadre);
             }
-
-            //Pregunta si hay algo a la derecha
+            
             if (R.Derecho != null)
             {
                 PreOrden(R.Derecho, NodoPadre);
@@ -282,94 +301,95 @@ namespace PryEstructuraDatos
             InOrdenAsc(Combo, Raiz);
         }
 
-        public void InOrdenAsc(ComboBox cb, clsNodo R)//R = Raiz
+        public void InOrdenAsc(ComboBox cmb, clsNodo R)
         {
-            //Pregunta si hay algo a la izquierda
+            if(R == null) 
+            {
+                return; 
+            }
+            
             if (R.Izquierdo != null)
             {
-                InOrdenAsc(cb, R.Izquierdo);
+                InOrdenAsc(cmb, R.Izquierdo);
             }
 
-            cb.Items.Add(R.Codigo);
+            cmb.Items.Add(R.Codigo);
 
-            //Pregunta si hay algo a la derecha
             if (R.Derecho != null)
             {
-                InOrdenAsc(cb, R.Derecho);
+                InOrdenAsc(cmb, R.Derecho);
             }
         }
 
-        public void RecorrerArbolDesc(ComboBox cb)
+        public void RecorrerArbolDesc(ComboBox cmb)
         {
-            cb.Items.Clear();
-            InOrdenDesc(cb, Raiz);
+            cmb.Items.Clear();
+            InOrdenDesc(cmb, Raiz);
         }
 
-        public void InOrdenDesc(ComboBox cb, clsNodo R)//R = Raíz
+        public void InOrdenDesc(ComboBox cmb, clsNodo R)
         {
-            //Pregunta si hay algo a la derecha
-            if (R.Derecho != null)
+            if (R == null)
             {
-                InOrdenDesc(cb, R.Derecho);
+                return;
             }
 
-            cb.Items.Add(R.Codigo);
+            if (R.Derecho != null)
+            {
+                InOrdenDesc(cmb, R.Derecho);
+            }
 
-            //Pregunta si hay algo a la izquierda
+            cmb.Items.Add(R.Codigo);
+
+
             if (R.Izquierdo != null)
             {
-                InOrdenDesc(cb, R.Izquierdo);
+                InOrdenDesc(cmb, R.Izquierdo);
             }
         }
 
-        public void RecorrerPreOrden(ComboBox cb)
+        public void RecorrerPreOrden(ComboBox cmb)
         {
-            cb.Items.Clear();
-            PreOrden(cb, Raiz);
+            cmb.Items.Clear();
+            PreOrden(cmb, Raiz);
         }
 
-        public void PreOrden(ComboBox cb, clsNodo R) //R = Raiz
+        public void PreOrden(ComboBox cmb, clsNodo R) 
         {
-            cb.Items.Add(R.Codigo); //Agrega el nodo raíz primero
+            cmb.Items.Add(R.Codigo); 
 
-            //Luego recorre el subárbol izquierdo si existe
             if (R.Izquierdo != null)
             {
-                PreOrden(cb, R.Izquierdo);
+                PreOrden(cmb, R.Izquierdo);
             }
 
-            //Finalmente, recorre el subárbol derecho si existe
             if (R.Derecho != null)
             {
-                PreOrden(cb, R.Derecho);
+                PreOrden(cmb, R.Derecho);
             }
         }
 
-        public void RecorrerPostOrden(ComboBox cb)
+        public void RecorrerPostOrden(ComboBox cmb)
         {
-            cb.Items.Clear();
-            PostOrden(cb, Raiz);
+            cmb.Items.Clear();
+            PostOrden(cmb, Raiz);
         }
 
-        public void PostOrden(ComboBox cb, clsNodo R)
-        {
-            //Recorre el subárbol izquierdo si existe
+        public void PostOrden(ComboBox cmb, clsNodo R)
+        {        
             if (R.Izquierdo != null)
             {
-                PostOrden(cb, R.Izquierdo);
+                PostOrden(cmb, R.Izquierdo);
             }
 
-            //Luego, recorre el subárbol derecho si existe
             if (R.Derecho != null)
             {
-                PostOrden(cb, R.Derecho);
+                PostOrden(cmb, R.Derecho);
             }
 
-            //Finalmente, agrega el nodo raíz al final
-            cb.Items.Add(R.Codigo);
+            cmb.Items.Add(R.Codigo);
         }
 
-        //Es para tener una busqueda pero no lo utilizamos para ninguno de los algoritmos que usamos ahora 
         public clsNodo BuscarCodigo(Int32 cod)
         {
             clsNodo Aux = Raiz;
@@ -423,6 +443,11 @@ namespace PryEstructuraDatos
 
         private void GrabarVectorInOrden(clsNodo NodoPadre)
         {
+            if(NodoPadre == null)
+            {
+                return;
+            }
+
             if (NodoPadre.Izquierdo != null)
             {
                 GrabarVectorInOrden(NodoPadre.Izquierdo);

@@ -129,7 +129,7 @@
             this.cmbCodigo.Location = new System.Drawing.Point(73, 27);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(156, 21);
-            this.cmbCodigo.TabIndex = 14;
+            this.cmbCodigo.TabIndex = 0;
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(6, 73);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(223, 43);
-            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -198,7 +198,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(9, 169);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(223, 43);
-            this.btnAgregar.TabIndex = 6;
+            this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -208,7 +208,7 @@
             this.txtNombre.Location = new System.Drawing.Point(59, 55);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(173, 20);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtTramite
@@ -216,7 +216,7 @@
             this.txtTramite.Location = new System.Drawing.Point(59, 85);
             this.txtTramite.Name = "txtTramite";
             this.txtTramite.Size = new System.Drawing.Size(173, 20);
-            this.txtTramite.TabIndex = 4;
+            this.txtTramite.TabIndex = 2;
             this.txtTramite.TextChanged += new System.EventHandler(this.txtTramite_TextChanged);
             // 
             // txtCodigo
@@ -224,7 +224,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(132, 26);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 3;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // groupBox1
