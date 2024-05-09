@@ -33,8 +33,9 @@ namespace PryEstructuraDatos
                 ObjNodo.Tramite = txtTramite.Text;
                 Arbol.Agregar(ObjNodo);
                 Arbol.Recorrer(dgvListado);
+                Arbol.Recorrer(cmbCodigo);
                 Arbol.Recorrer(trvMostrar);
-                //Arbol.Recorrer(cmbCodigo);
+                
                 
                 txtCodigo.Text = "";
                 txtNombre.Text = "";
@@ -84,5 +85,69 @@ namespace PryEstructuraDatos
                 cajaTramite = true;
             }
         }
+
+        private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbCodigo.SelectedIndex != -1)
+            {
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
+            }
+        }
+
+        private void optInOrdenAsc_CheckedChanged(object sender, EventArgs e)
+        {
+            Arbol.Recorrer(dgvListado);
+            Arbol.Recorrer(cmbCodigo);
+        }
+
+        private void optInOrdenDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            Arbol.RecorrerDesc(dgvListado);
+            Arbol.RecorrerArbolDesc(cmbCodigo);
+        }
+
+        private void optPreOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            Arbol.RecorrerPreOrden(dgvListado);
+        }
+
+        private void optPostOrden_CheckedChanged(object sender, EventArgs e)
+        {
+            Arbol.RecorrerPostOrden(dgvListado);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(Arbol.Raiz != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                Arbol.Eliminar(x);
+                Arbol.Recorrer(dgvListado);
+                Arbol.Recorrer(cmbCodigo);
+                Arbol.Recorrer(trvMostrar);
+                
+                optInOrdenDesc.Checked = false;
+                optPostOrden.Checked = false;
+                optPreOrden.Checked = false;
+            }
+            else
+            {
+                MessageBox.Show("El árbol se encuentra vacío");
+            }
+            cmbCodigo.Text = "";
+            btnEliminar.Enabled = false;
+        }
+
+        private void btnEquilibrar_Click(object sender, EventArgs e)
+        {
+            Arbol.Equilibrar();
+            Arbol.Recorrer(trvMostrar);
+        }
+
+        
     }
 }

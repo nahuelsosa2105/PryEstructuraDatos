@@ -81,6 +81,7 @@
             this.optPostOrden.TabStop = true;
             this.optPostOrden.Text = "Post-Orden";
             this.optPostOrden.UseVisualStyleBackColor = true;
+            this.optPostOrden.CheckedChanged += new System.EventHandler(this.optPostOrden_CheckedChanged);
             // 
             // optPreOrden
             // 
@@ -92,6 +93,7 @@
             this.optPreOrden.TabStop = true;
             this.optPreOrden.Text = "Pre-Orden";
             this.optPreOrden.UseVisualStyleBackColor = true;
+            this.optPreOrden.CheckedChanged += new System.EventHandler(this.optPreOrden_CheckedChanged);
             // 
             // optInOrdenDesc
             // 
@@ -103,6 +105,7 @@
             this.optInOrdenDesc.TabStop = true;
             this.optInOrdenDesc.Text = "In-Orden-Descendente";
             this.optInOrdenDesc.UseVisualStyleBackColor = true;
+            this.optInOrdenDesc.CheckedChanged += new System.EventHandler(this.optInOrdenDesc_CheckedChanged);
             // 
             // optInOrdenAsc
             // 
@@ -114,6 +117,7 @@
             this.optInOrdenAsc.TabStop = true;
             this.optInOrdenAsc.Text = "In-Orden-Ascendente";
             this.optInOrdenAsc.UseVisualStyleBackColor = true;
+            this.optInOrdenAsc.CheckedChanged += new System.EventHandler(this.optInOrdenAsc_CheckedChanged);
             // 
             // dgvListado
             // 
@@ -168,6 +172,7 @@
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(156, 21);
             this.cmbCodigo.TabIndex = 14;
+            this.cmbCodigo.SelectedIndexChanged += new System.EventHandler(this.cmbCodigo_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -186,6 +191,7 @@
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gpNuevoElemento
             // 
@@ -272,6 +278,7 @@
             this.btnEquilibrar.TabIndex = 21;
             this.btnEquilibrar.Text = "Equilibrar";
             this.btnEquilibrar.UseVisualStyleBackColor = true;
+            this.btnEquilibrar.Click += new System.EventHandler(this.btnEquilibrar_Click);
             // 
             // trvMostrar
             // 
