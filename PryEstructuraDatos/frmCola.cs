@@ -55,8 +55,13 @@ namespace PryEstructuraDatos
 
         private void frmCola_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
-            volverInicio.ShowDialog();
+            //frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
+            //volverInicio.ShowDialog();
+        }
+
+        private void frmCola_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

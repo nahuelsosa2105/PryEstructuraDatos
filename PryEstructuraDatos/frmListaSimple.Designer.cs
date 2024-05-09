@@ -242,9 +242,12 @@
             this.Controls.Add(this.gpElementoEliminado);
             this.Controls.Add(this.gpNuevoElemento);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
             this.Name = "frmListaSimple";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura de datos lineal: Lista Simple";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmListaSimple_FormClosed);
+            this.Load += new System.EventHandler(this.frmListaSimple_Load);
             this.gpListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.gpElementoEliminado.ResumeLayout(false);

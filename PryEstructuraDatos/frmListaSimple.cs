@@ -24,8 +24,8 @@ namespace PryEstructuraDatos
 
         private void frmListaSimple_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
-            volverInicio.ShowDialog();
+            //frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
+            //volverInicio.ShowDialog();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -107,6 +107,11 @@ namespace PryEstructuraDatos
             {
                 cajaTramite = true;
             }
+        }
+
+        private void frmListaSimple_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

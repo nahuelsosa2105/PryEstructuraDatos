@@ -116,5 +116,10 @@ namespace PryEstructuraDatos
             Lista.RecorrerDesc(cmbCodigo);
             
         }
+
+        private void frmListaDoble_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

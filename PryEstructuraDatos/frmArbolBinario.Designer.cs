@@ -297,7 +297,9 @@
             this.Controls.Add(this.gpListado);
             this.Controls.Add(this.gpElementoEliminado);
             this.Controls.Add(this.gpNuevoElemento);
+            this.MaximizeBox = false;
             this.Name = "frmArbolBinario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArbolBinario";
             this.gpListado.ResumeLayout(false);
             this.gpListado.PerformLayout();

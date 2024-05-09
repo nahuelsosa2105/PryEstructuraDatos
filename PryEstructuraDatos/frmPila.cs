@@ -21,8 +21,8 @@ namespace PryEstructuraDatos
 
         private void frmPila_FormClosed(object sender, FormClosedEventArgs e)
         {
-            frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
-            volverInicio.ShowDialog();
+            //frmVentanaPrincipal volverInicio = new frmVentanaPrincipal();
+            //volverInicio.ShowDialog();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

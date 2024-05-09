@@ -46,10 +46,10 @@
             this.lblCodEliminado = new System.Windows.Forms.Label();
             this.gpListado = new System.Windows.Forms.GroupBox();
             this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.lstCola = new System.Windows.Forms.ListBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstCola = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpNuevoElemento.SuspendLayout();
             this.gpElementoEliminado.SuspendLayout();
@@ -233,14 +233,6 @@
             this.dgvListado.Size = new System.Drawing.Size(559, 186);
             this.dgvListado.TabIndex = 1;
             // 
-            // lstCola
-            // 
-            this.lstCola.FormattingEnabled = true;
-            this.lstCola.Location = new System.Drawing.Point(6, 19);
-            this.lstCola.Name = "lstCola";
-            this.lstCola.Size = new System.Drawing.Size(156, 186);
-            this.lstCola.TabIndex = 0;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Código";
@@ -261,6 +253,14 @@
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
+            // lstCola
+            // 
+            this.lstCola.FormattingEnabled = true;
+            this.lstCola.Location = new System.Drawing.Point(6, 19);
+            this.lstCola.Name = "lstCola";
+            this.lstCola.Size = new System.Drawing.Size(156, 186);
+            this.lstCola.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PryEstructuraDatos.Properties.Resources.cola;
@@ -280,9 +280,12 @@
             this.Controls.Add(this.gpElementoEliminado);
             this.Controls.Add(this.gpNuevoElemento);
             this.Controls.Add(this.pictureBox1);
+            this.MaximizeBox = false;
             this.Name = "frmCola";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estructura Dinámica no Lineal - Cola";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCola_FormClosed);
+            this.Load += new System.EventHandler(this.frmCola_Load);
             this.gpNuevoElemento.ResumeLayout(false);
             this.gpNuevoElemento.PerformLayout();
             this.gpElementoEliminado.ResumeLayout(false);
