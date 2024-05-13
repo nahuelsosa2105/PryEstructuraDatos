@@ -56,5 +56,10 @@ namespace PryEstructuraDatos
             frmListaDoble pasarLisDoble = new frmListaDoble();
             pasarLisDoble.ShowDialog();
         }
+
+        private void operacionesConTablasDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
