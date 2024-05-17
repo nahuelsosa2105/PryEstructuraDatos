@@ -16,5 +16,11 @@ namespace PryEstructuraDatos
         {
             InitializeComponent();
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            clsBaseDatos objBaseDatos = new clsBaseDatos();
+            objBaseDatos.Listar(dgvBaseDatos, txtListar.Text);
+        }
     }
 }

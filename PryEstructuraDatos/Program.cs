@@ -16,7 +16,7 @@ namespace PryEstructuraDatos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmVentanaPrincipal());
+            Application.Run(new frmBaseDatosConsulta());
         }
     }
 }
