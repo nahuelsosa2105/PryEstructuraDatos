@@ -59,7 +59,14 @@ namespace PryEstructuraDatos
 
         private void operacionesConTablasDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmBaseDatosOperaciones pasarOperacionesSQL = new frmBaseDatosOperaciones();
+            pasarOperacionesSQL.ShowDialog();
+        }
 
+        private void consultasEnLaBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDatosConsulta pasarOperacionesSQL = new frmBaseDatosConsulta();
+            pasarOperacionesSQL.ShowDialog();
         }
     }
 }
