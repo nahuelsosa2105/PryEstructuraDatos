@@ -168,6 +168,7 @@
             this.btnInterseccion.TabIndex = 3;
             this.btnInterseccion.Text = "Intersección";
             this.btnInterseccion.UseVisualStyleBackColor = true;
+            this.btnInterseccion.Click += new System.EventHandler(this.btnInterseccion_Click);
             // 
             // btnUnion
             // 
@@ -177,6 +178,7 @@
             this.btnUnion.TabIndex = 2;
             this.btnUnion.Text = "Unión";
             this.btnUnion.UseVisualStyleBackColor = true;
+            this.btnUnion.Click += new System.EventHandler(this.btnUnion_Click);
             // 
             // frmBaseDatosOperaciones
             // 

@@ -54,5 +54,16 @@ namespace PryEstructuraDatos
             string varSQL = "SELECT * FROM(SELECT NOMBRE FROM PAIS WHERE IDPAIS > 10)  AS T1";
             objBaseDatos.Listar(dgvBaseDatos, varSQL);
         }
+
+        private void btnUnion_Click(object sender, EventArgs e)
+        {
+            string varSQL = "SELECT * " + "FROM LIBRO " + "WHERE IDAUTOR = 2 " +"UNION " + "SELECT * " + "FROM LIBRO " + "WHERE IDAUTOR = 18 ";
+            objBaseDatos.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void btnInterseccion_Click(object sender, EventArgs e)
+        {
+            //string varS
+        }
     }
 }

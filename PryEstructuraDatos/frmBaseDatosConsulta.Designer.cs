@@ -37,6 +37,7 @@
             // 
             // txtListar
             // 
+            this.txtListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtListar.Location = new System.Drawing.Point(12, 28);
             this.txtListar.Multiline = true;
             this.txtListar.Name = "txtListar";
@@ -81,6 +82,7 @@
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.txtListar);
             this.Name = "frmBaseDatosConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta en la Base de Datos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaseDatos)).EndInit();
             this.ResumeLayout(false);
