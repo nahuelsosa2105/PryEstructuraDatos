@@ -159,6 +159,7 @@
             this.btnDiferencia.TabIndex = 4;
             this.btnDiferencia.Text = "Diferencia";
             this.btnDiferencia.UseVisualStyleBackColor = true;
+            this.btnDiferencia.Click += new System.EventHandler(this.btnDiferencia_Click);
             // 
             // btnInterseccion
             // 

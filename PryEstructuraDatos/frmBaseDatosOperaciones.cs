@@ -63,7 +63,14 @@ namespace PryEstructuraDatos
 
         private void btnInterseccion_Click(object sender, EventArgs e)
         {
-            //string varS
+            string varSQL = "SELECT*" + " FROM AUTOR " + "WHERE IdAutor IN(SELECT IdAutor FROM LIBRO)";
+            objBaseDatos.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void btnDiferencia_Click(object sender, EventArgs e)
+        {
+            string varSQL = "SELECT *" + " FROM IDIOMA " + "WHERE IdIdioma NOT IN (SELECT IdIdioma FROM LIBRO)";
+            objBaseDatos.Listar(dgvBaseDatos, varSQL);
         }
     }
 }
