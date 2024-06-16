@@ -47,7 +47,29 @@
             // 
             // cmbListar
             // 
+            this.cmbListar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbListar.FormattingEnabled = true;
+            this.cmbListar.Items.AddRange(new object[] {
+            "Diferencia",
+            "Intersección",
+            "Unión",
+            "Selección Simple",
+            "Selección por multiatributo por Intersección",
+            "Selección por multiatributo por Convolución",
+            "Orden",
+            "Proyección por un atributo",
+            "Proyección por multiatributo",
+            "Juntar",
+            "Diferencia",
+            "Intersección",
+            "Unión",
+            "Selección Simple",
+            "Selección por multiatributo por Intersección",
+            "Selección por multiatributo por Convolución",
+            "Orden",
+            "Proyección por un atributo",
+            "Proyección por multiatributo",
+            "Juntar"});
             this.cmbListar.Location = new System.Drawing.Point(218, 11);
             this.cmbListar.Name = "cmbListar";
             this.cmbListar.Size = new System.Drawing.Size(479, 21);
@@ -61,10 +83,12 @@
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // lblListar
             // 
             this.lblListar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblListar.Location = new System.Drawing.Point(12, 47);
             this.lblListar.Name = "lblListar";
             this.lblListar.Size = new System.Drawing.Size(817, 138);
@@ -89,6 +113,7 @@
             this.Controls.Add(this.cmbListar);
             this.Controls.Add(this.label1);
             this.Name = "frmBaseDatosRepasoOperaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBaseDatosRepasoOperaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaseDatos)).EndInit();
             this.ResumeLayout(false);
